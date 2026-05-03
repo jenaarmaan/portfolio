@@ -49,13 +49,13 @@ export function HeroSection() {
             </div>
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold text-foreground">8+</p>
+              <p className="text-2xl sm:text-3xl font-bold text-foreground">1+</p>
               <p className="text-sm">Hackathons Won</p>
             </div>
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold text-foreground">3+</p>
-              <p className="text-sm">Research Papers</p>
+              <p className="text-2xl sm:text-3xl font-bold text-foreground">1+</p>
+              <p className="text-sm">Patent Publication</p>
             </div>
           </div>
         </div>

@@ -3,22 +3,22 @@ import Link from "next/link"
 export function ExperienceHighlightsSection() {
   const experiences = [
     {
-      company: "TechCorp AI Labs",
-      role: "Senior ML Engineer",
-      period: "2023 - Present",
-      highlight: "Led team of 5 engineers building real-time recommendation systems serving 50M+ users",
+      company: "Infosys Springboard",
+      role: "AI Intern",
+      period: "Dec 2025 - Mar 2026",
+      highlight: "Participating in intensive AI training focusing on advanced machine learning and industrial applications.",
     },
     {
-      company: "StartupX",
-      role: "ML Engineer",
-      period: "2021 - 2023",
-      highlight: "Built core ML infrastructure from scratch, reducing model training time by 70%",
+      company: "IBM | Edunet Foundation",
+      role: "ML Intern",
+      period: "Jun 2025 - Jul 2025",
+      highlight: "Deep dive into ML algorithms, model training, and AI ethics via the IBM SkillsBuild program.",
     },
     {
-      company: "Research Institute",
-      role: "Research Intern",
-      period: "2020 - 2021",
-      highlight: "Published 2 papers on efficient neural network architectures for edge devices",
+      company: "Microsoft x SAP | Edunet",
+      role: "AI Intern",
+      period: "Mar 2025 - Apr 2025",
+      highlight: "Developed 'Arogya', an AI-powered medical diagnosis system using CNNs (ResNet 50, EfficientNet).",
     },
   ]
 
