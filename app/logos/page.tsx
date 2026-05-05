@@ -46,11 +46,25 @@ const initiatives = [
 
 const events = [
   {
+    name: "Generative AI Webinar",
+    date: "2024",
+    type: "Webinar",
+    location: "100x Engineers",
+    description: "Explored the revolution of image and video creation using prompts and advanced AI tools. Deep dive into FLUX DEV LoRA, Hugging Face, Runway.ml, and Replicate to enhance creative productivity.",
+  },
+  {
     name: "Google I/O Connect",
     date: "2024",
     type: "Technical Conference",
     location: "Bengaluru, India",
     description: "Engaged with the latest breakthroughs in AI, Mobile, and Web technologies directly from Google experts.",
+  },
+  {
+    name: "Skanray Industrial Visit",
+    date: "October 2023",
+    type: "Industrial Visit",
+    location: "Skanray Technologies, Mysuru",
+    description: "Gained insights into healthcare and medical equipment manufacturing, observing the product design pipeline and the scale of industrial operations in a leading medical tech firm.",
   },
   {
     name: "DevFest Regional",

@@ -41,7 +41,6 @@ const skillCategories = [
 const certifications = [
   { name: "Introduction to generative AI concepts", issuer: "Google Cloud", year: "2025" },
   { name: "Design a dream destination using Microsoft Copilot", issuer: "Microsoft", year: "2025" },
-  { name: "Deep Learning Specialization", issuer: "DeepLearning.AI", year: "2021" },
 ]
 
 function getLevelColor(level: string) {
