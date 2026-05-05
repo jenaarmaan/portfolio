@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 const initiatives = [
   {
-    role: "Google Student Ambassador",
+    role: "Student Ambassador",
     organization: "Google",
-    period: "2024 - 2025",
+    period: "Aug 2025 - Dec 2025",
     description: "Serving as a liaison between Google and the university community, fostering innovation and sharing the latest Google technologies with students.",
     highlights: [
       "Organized technical workshops on AI and Cloud technologies",
@@ -19,21 +19,9 @@ const initiatives = [
     logo: "G",
   },
   {
-    role: "GSoC Ambassador",
-    organization: "Google Summer of Code",
-    period: "2024 - Present",
-    description: "Advocating for open-source development and guiding aspiring developers through the Google Summer of Code program.",
-    highlights: [
-      "Guided students in finding and contributing to open-source projects",
-      "Conducted awareness sessions on the impact of open-source",
-      "Supported the local developer community in GSoC applications",
-    ],
-    logo: "OS",
-  },
-  {
-    role: "GDG Member / Organizer",
-    organization: "Google Developer Groups",
-    period: "2023 - Present",
+    role: "Core Member",
+    organization: "Google Developers Group",
+    period: "Oct 2024 - Aug 2025",
     description: "Actively involved in the Google Developer Groups ecosystem, contributing to the local tech community through knowledge sharing and event coordination.",
     highlights: [
       "Contributed to the organization of regional DevFests",
@@ -41,6 +29,18 @@ const initiatives = [
       "Supported local developers in mastering modern tech stacks",
     ],
     logo: "GDG",
+  },
+  {
+    role: "Campus Ambassador",
+    organization: "GirlScript Summer of Code",
+    period: "Jul 2025 - Sep 2025",
+    description: "Advocating for open-source development and guiding aspiring developers through the GirlScript Summer of Code program.",
+    highlights: [
+      "Guided students in finding and contributing to open-source projects",
+      "Conducted awareness sessions on the impact of open-source",
+      "Supported the local developer community in GSSoC applications",
+    ],
+    logo: "GS",
   },
 ]
 
@@ -53,32 +53,11 @@ const events = [
     description: "Explored the revolution of image and video creation using prompts and advanced AI tools. Deep dive into FLUX DEV LoRA, Hugging Face, Runway.ml, and Replicate to enhance creative productivity.",
   },
   {
-    name: "Google I/O Connect",
-    date: "2024",
-    type: "Technical Conference",
-    location: "Bengaluru, India",
-    description: "Engaged with the latest breakthroughs in AI, Mobile, and Web technologies directly from Google experts.",
-  },
-  {
     name: "Skanray Industrial Visit",
     date: "October 2023",
     type: "Industrial Visit",
     location: "Skanray Technologies, Mysuru",
     description: "Gained insights into healthcare and medical equipment manufacturing, observing the product design pipeline and the scale of industrial operations in a leading medical tech firm.",
-  },
-  {
-    name: "DevFest Regional",
-    date: "2023",
-    type: "Developer Festival",
-    location: "Regional",
-    description: "Participated in one of the largest community-led developer events, focusing on practical AI/ML implementations.",
-  },
-  {
-    name: "Open Source Summit",
-    date: "2023",
-    type: "Technical Seminar",
-    location: "Online",
-    description: "Explored the future of decentralized development and the evolution of the global open-source ecosystem.",
   },
 ]
 
