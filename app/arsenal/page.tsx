@@ -12,26 +12,8 @@ const skillCategories = [
     skills: [
       { name: "PyTorch", level: "Expert" },
       { name: "TensorFlow", level: "Expert" },
-      { name: "Transformers", level: "Expert" },
-      { name: "Computer Vision", level: "Expert" },
       { name: "NLP", level: "Expert" },
-      { name: "Reinforcement Learning", level: "Advanced" },
-      { name: "MLOps", level: "Expert" },
-      { name: "Model Optimization", level: "Expert" },
-    ],
-  },
-  {
-    title: "Cloud & Infrastructure",
-    description: "Building scalable, production-grade systems",
-    skills: [
-      { name: "AWS", level: "Expert" },
-      { name: "GCP", level: "Advanced" },
-      { name: "Kubernetes", level: "Expert" },
-      { name: "Docker", level: "Expert" },
-      { name: "Terraform", level: "Advanced" },
-      { name: "CI/CD", level: "Expert" },
-      { name: "Monitoring", level: "Expert" },
-      { name: "Serverless", level: "Advanced" },
+      { name: "Model Optimization", level: "Advanced" },
     ],
   },
   {
@@ -41,35 +23,7 @@ const skillCategories = [
       { name: "Python", level: "Expert" },
       { name: "C++", level: "Advanced" },
       { name: "TypeScript", level: "Advanced" },
-      { name: "Rust", level: "Intermediate" },
-      { name: "Go", level: "Intermediate" },
       { name: "SQL", level: "Expert" },
-      { name: "CUDA", level: "Advanced" },
-      { name: "Bash", level: "Expert" },
-    ],
-  },
-  {
-    title: "Blockchain & Web3",
-    description: "Building decentralized applications",
-    skills: [
-      { name: "Solidity", level: "Advanced" },
-      { name: "Ethereum", level: "Advanced" },
-      { name: "Smart Contracts", level: "Advanced" },
-      { name: "DeFi", level: "Intermediate" },
-      { name: "Web3.js", level: "Advanced" },
-      { name: "IPFS", level: "Intermediate" },
-    ],
-  },
-  {
-    title: "Data Engineering",
-    description: "Processing and managing data at scale",
-    skills: [
-      { name: "Apache Spark", level: "Expert" },
-      { name: "Apache Kafka", level: "Expert" },
-      { name: "Airflow", level: "Expert" },
-      { name: "Delta Lake", level: "Advanced" },
-      { name: "Databricks", level: "Advanced" },
-      { name: "dbt", level: "Advanced" },
     ],
   },
   {
@@ -80,18 +34,13 @@ const skillCategories = [
       { name: "FastAPI", level: "Expert" },
       { name: "React", level: "Advanced" },
       { name: "Next.js", level: "Advanced" },
-      { name: "MLflow", level: "Expert" },
-      { name: "Ray", level: "Expert" },
-      { name: "Weights & Biases", level: "Expert" },
-      { name: "Jupyter", level: "Expert" },
     ],
   },
 ]
 
 const certifications = [
-  { name: "AWS Solutions Architect - Professional", issuer: "Amazon Web Services", year: "2023" },
-  { name: "Google Cloud Professional ML Engineer", issuer: "Google Cloud", year: "2023" },
-  { name: "Kubernetes Administrator (CKA)", issuer: "CNCF", year: "2022" },
+  { name: "Introduction to generative AI concepts", issuer: "Google Cloud", year: "2025" },
+  { name: "Design a dream destination using Microsoft Copilot", issuer: "Microsoft", year: "2025" },
   { name: "Deep Learning Specialization", issuer: "DeepLearning.AI", year: "2021" },
 ]
 

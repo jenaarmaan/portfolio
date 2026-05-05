@@ -79,6 +79,26 @@ const challenges = [
     ],
     status: "Completed",
   },
+  {
+    title: "AI Skills Fest Challenge: Teaching toolkit/essentials for Educators",
+    duration: "1 day",
+    period: "May 2025",
+    description: "Participated in the AI Skills Fest challenge focused on building a teaching toolkit and mastering essentials for educators in the AI era.",
+    goals: [
+      "Learn AI tools for educational content creation",
+      "Understand AI ethics in the classroom",
+      "Develop a personalized teaching toolkit",
+    ],
+    outcomes: [
+      "Completed the challenge module and passed assessment",
+      "Gained proficiency in using AI for educational productivity",
+      "Acquired essentials for integrating AI into teaching workflows",
+    ],
+    timeline: [
+      { day: "May 27", focus: "Challenge participation and assessment completion" },
+    ],
+    status: "Completed",
+  },
 ]
 
 export default function QuestPage() {
