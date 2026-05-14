@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const initiatives = [
   {
-    role: "Student Ambassador",
+    role: "Google Student Ambassador",
     organization: "Google",
     period: "Aug 2025 - Dec 2025",
     description: "Serving as a liaison between Google and the university community, fostering innovation and sharing the latest Google technologies with students.",
@@ -19,7 +19,19 @@ const initiatives = [
     logo: "G",
   },
   {
-    role: "Core Member",
+    role: "Internal Hackathon Organizer",
+    organization: "SIH 2024",
+    period: "September 2024",
+    description: "Coordinated and executed the institute-level Internal Hackathon for Smart India Hackathon 2024. Simultaneously participated as a lead innovator, pitching solutions for real-world impact.",
+    highlights: [
+      "Orchestrated event logistics and faculty coordination",
+      "Pitched a high-potential solution for national-level challenges",
+      "Fostered a culture of innovation and collaboration on campus",
+    ],
+    logo: "SIH",
+  },
+  {
+    role: "GDGoC Core Member",
     organization: "Google Developers Group",
     period: "Oct 2024 - Aug 2025",
     description: "Actively involved in the Google Developer Groups ecosystem, contributing to the local tech community through knowledge sharing and event coordination.",
@@ -31,7 +43,19 @@ const initiatives = [
     logo: "GDG",
   },
   {
-    role: "Campus Ambassador",
+    role: "Lead Innovator",
+    organization: "Girls Geek Hack (IEEE)",
+    period: "December 2023",
+    description: "Presented a Blockchain-based Digital Health Record Management System integrated with Aadhaar authentication, focused on secure and decentralized health records.",
+    highlights: [
+      "Integrated Aadhaar (UIDAI) for unique patient identification",
+      "Designed decentralized retrieval systems for emergency access",
+      "Collaborated with a multi-disciplinary team for life-saving tech",
+    ],
+    logo: "IEEE",
+  },
+  {
+    role: "GSSoC Campus Ambassador",
     organization: "GirlScript Summer of Code",
     period: "Jul 2025 - Sep 2025",
     description: "Advocating for open-source development and guiding aspiring developers through the GirlScript Summer of Code program.",
@@ -46,11 +70,32 @@ const initiatives = [
 
 const events = [
   {
+    name: "Infosys Springboard Summit 2025",
+    date: "2025",
+    type: "Summit",
+    location: "Infosys Campus",
+    description: "Explored the future of digital transformation and lifelong learning. Engaged in high-level discussions on cloud strategy and career growth with leaders from Infosys and AWS.",
+  },
+  {
+    name: "Vigyanlabs Workshop",
+    date: "August 2025",
+    type: "Technical Workshop",
+    location: "Vigyanlabs, Mysuru",
+    description: "Deep dive into sovereign cloud infrastructure, agentic AI, and data security. Observed live demos of AI-powered sustainability tools and private cloud deployments.",
+  },
+  {
     name: "Generative AI Webinar",
     date: "2024",
     type: "Webinar",
     location: "100x Engineers",
     description: "Explored the revolution of image and video creation using prompts and advanced AI tools. Deep dive into FLUX DEV LoRA, Hugging Face, Runway.ml, and Replicate to enhance creative productivity.",
+  },
+  {
+    name: "GDG Build with AI Bootcamp",
+    date: "March 8, 2024",
+    type: "Bootcamp",
+    location: "SJBIT, Bengaluru",
+    description: "Participated in an immersive dive into building impactful solutions with AI. Engaged in expert mentorship and sessions focused on the Google Solution Challenge.",
   },
   {
     name: "Skanray Industrial Visit",
