@@ -48,182 +48,79 @@ const contactInfo = [
 ]
 
 export default function SignalPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({ name: "", email: "", subject: "", message: "" })
-  }
-
   return (
     <div className="min-h-screen py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">Signal</p>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
             Get in Touch
           </h1>
-          <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             Have a project in mind? Want to collaborate on research? Or just want to chat about AI?
             I&apos;d love to hear from you.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="p-8 rounded-2xl bg-card border border-border">
-            <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
-            
-            {submitted ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-                <p className="text-muted-foreground mb-4">Thank you for reaching out. I&apos;ll get back to you soon.</p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="text-primary hover:underline"
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Contact Info Cards */}
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold mb-6">Direct Channels</h2>
+              {contactInfo.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 group"
                 >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="Your name"
-                    />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    {item.icon}
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="you@example.com"
-                    />
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                    <p className="font-medium group-hover:text-primary transition-colors">{item.value}</p>
                   </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    required
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="What's this about?"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    placeholder="Your message..."
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-              </form>
-            )}
-          </div>
+                </Link>
+              ))}
+            </div>
 
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Connect With Me</h2>
-              <div className="space-y-4">
-                {contactInfo.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <p className="font-medium group-hover:text-primary transition-colors">{item.value}</p>
-                    </div>
-                  </Link>
-                ))}
+            {/* Availability & Status */}
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold mb-6">Availability</h2>
+              <div className="p-6 rounded-xl bg-card border border-border">
+                <h3 className="text-lg font-bold mb-4">Open to Opportunities</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  I&apos;m always interested in hearing about new opportunities, whether it&apos;s:
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">•</span>
+                    Full-time ML/AI engineering roles
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">•</span>
+                    Research collaborations
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">•</span>
+                    Technical advisory positions
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">•</span>
+                    Speaking opportunities
+                  </li>
+                </ul>
               </div>
-            </div>
 
-            <div className="p-6 rounded-xl bg-card border border-border">
-              <h3 className="text-lg font-bold mb-4">Open to Opportunities</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                I&apos;m always interested in hearing about new opportunities, whether it&apos;s:
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">•</span>
-                  Full-time ML/AI engineering roles
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">•</span>
-                  Research collaborations
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">•</span>
-                  Technical advisory positions
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">•</span>
-                  Speaking opportunities
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
-              <h3 className="text-lg font-bold mb-2">Response Time</h3>
-              <p className="text-muted-foreground text-sm">
-                I typically respond within 24-48 hours. For urgent matters, please mention it in the subject line.
-              </p>
+              <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
+                <h3 className="text-lg font-bold mb-2">Response Time</h3>
+                <p className="text-muted-foreground text-sm">
+                  I typically respond within 24-48 hours. For urgent matters, please reach out via email.
+                </p>
+              </div>
             </div>
           </div>
         </div>
