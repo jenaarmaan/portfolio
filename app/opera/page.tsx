@@ -6,80 +6,141 @@ export const metadata: Metadata = {
   description: "Explore my portfolio of AI/ML projects, systems, and open-source contributions.",
 }
 
-const projects = [
+interface Project {
+  id: string
+  title: string
+  description: string
+  problem?: string
+  solution?: string
+  architecture?: string
+  impact?: string
+  tags: string[]
+  status: string
+  github?: string
+  demo?: string
+}
+
+const projects: Project[] = [
   {
-    id: "neuralsync",
-    title: "NeuralSync",
-    description: "Real-time neural network inference engine with sub-10ms latency for production workloads. Built for high-throughput scenarios requiring consistent performance.",
-    problem: "Production ML systems often struggle with latency requirements, especially for real-time applications.",
-    solution: "Custom inference runtime with CUDA kernel optimizations and intelligent batching strategies.",
-    architecture: "Microservices architecture with gRPC endpoints, Redis caching, and Kubernetes orchestration.",
-    impact: "Reduced inference latency by 85% and increased throughput by 3x compared to baseline TensorFlow Serving.",
-    tags: ["PyTorch", "CUDA", "C++", "gRPC", "Kubernetes"],
-    status: "Production",
-    github: "https://github.com",
-    demo: "https://demo.example.com",
+    id: "uemp",
+    title: "Unified E-Waste Management Platform (UEMP)",
+    description: "An intelligent, robust digital system to streamline the lifecycle management of electronic products—from manufacturing to recycling—supporting a sustainable circular economy.",
+    problem: "Lack of centralized, secure tracking mechanisms for electronics, creating massive environmental challenges and cross-stakeholder audit gaps.",
+    solution: "A unified portal connecting manufacturers, consumers, recyclers, and regulators using secure optical tag registration.",
+    architecture: "Next.js, Node.js API, Firebase Authentication, Firestore Database, and Google Gemini AI module integration.",
+    impact: "🏆 Selected as one of the Top 105 Projects Pan India in the Google GDG Hack2Skill Hackathon 2025. Provides secure device tracking and real-time impact reports.",
+    tags: ["React", "Next.js", "Firebase", "Node.js", "Gemini AI", "ElectronJS"],
+    status: "Award-winning",
   },
   {
-    id: "dataforge",
-    title: "DataForge",
-    description: "Distributed data pipeline framework processing 1M+ events/second with built-in fault tolerance and exactly-once semantics.",
-    problem: "Existing pipeline solutions couldn't handle our scale requirements with acceptable reliability.",
-    solution: "Custom streaming framework built on Kafka with stateful processing and checkpoint recovery.",
-    architecture: "Event-driven architecture with Kafka, Spark Streaming, and Delta Lake for storage.",
-    impact: "Powers data pipelines for 3 major products, processing over 2TB of data daily with 99.99% uptime.",
-    tags: ["Apache Kafka", "Spark", "Python", "Kubernetes", "Delta Lake"],
-    status: "Open Source",
-    github: "https://github.com",
+    id: "autoforge",
+    title: "AutoForge",
+    description: "Automated, secure CI/CD pipeline leveraging industry-standard cloud workflows to streamline code deployment and infrastructure resets.",
+    problem: "Manual code delivery, regression testing, and EC2 application restarts were slow, prone to credentials exposure, and lacked process orchestration.",
+    solution: "Fully automated pipeline executing test suites, build actions, image caching, and instance restarts with secure secret variable storage.",
+    architecture: "GitHub Actions workflows coupled with AWS EC2 container endpoints and cloud instances.",
+    impact: "Bypasses manual maintenance and credentials exposure completely, achieving a highly secure, zero-overhead deployment loop.",
+    tags: ["AWS EC2", "GitHub Actions", "Docker", "CI/CD", "TypeScript", "Shell"],
+    status: "Public",
   },
   {
-    id: "visioncore",
-    title: "VisionCore",
-    description: "Computer vision platform for autonomous systems with multi-modal sensor fusion capabilities.",
-    problem: "Autonomous systems need to process multiple sensor inputs with minimal latency and high accuracy.",
-    solution: "Unified perception stack with transformer-based sensor fusion and edge-optimized inference.",
-    architecture: "ROS2-based system with custom CUDA kernels for sensor preprocessing and TensorRT inference.",
-    impact: "Deployed on 50+ autonomous vehicles with 99.7% obstacle detection accuracy.",
-    tags: ["TensorFlow", "OpenCV", "ROS2", "Edge AI", "TensorRT"],
-    status: "In Development",
-    github: "https://github.com",
+    id: "arogya",
+    title: "Arogya AI",
+    description: "An intelligent medical diagnosis system leveraging deep learning to automate disease detection and medical imaging diagnostics.",
+    problem: "Lack of immediate, reliable diagnostic support in resource-constrained communities with few medical specialists.",
+    solution: "Computer-aided diagnostic system utilizing high-precision convolutional neural networks (CNNs) for multi-class image classification.",
+    architecture: "Jupyter Notebook running PyTorch and fine-tuned ResNet-50 / EfficientNet neural network backbones.",
+    impact: "Highly optimized deep learning model providing automated, high-precision image detection for rapid healthcare decisions.",
+    tags: ["Deep Learning", "CNN", "ResNet 50", "EfficientNet", "PyTorch", "Jupyter"],
+    status: "Public",
   },
   {
-    id: "mlops-toolkit",
-    title: "MLOps Toolkit",
-    description: "End-to-end MLOps platform for model training, versioning, deployment, and monitoring.",
-    problem: "Managing ML model lifecycle was fragmented across multiple tools and workflows.",
-    solution: "Unified platform integrating experiment tracking, model registry, and automated deployment.",
-    architecture: "Built on Kubernetes with MLflow, Seldon Core, and custom monitoring dashboards.",
-    impact: "Reduced model deployment time from days to hours, serving 20+ production models.",
-    tags: ["MLflow", "Kubernetes", "Seldon", "Prometheus", "Python"],
-    status: "Production",
-    github: "https://github.com",
+    id: "pii-redaction",
+    title: "PII Detection & Redaction Tool",
+    description: "A secure, desktop-based Python application designed to automatically detect and redact sensitive Personally Identifiable Information (PII) from PDFs.",
+    problem: "Manual sanitization of research files and legal documents is highly slow and poses serious data privacy leaks.",
+    solution: "High-precision regular expression analyzers and SpaCy NLP models combined to target Aadhaar, PAN, emails, and phone numbers.",
+    architecture: "Python desktop framework running PyMuPDF (Fitz) and local regular expression filters for absolute data privacy.",
+    impact: "🛡️ Bypasses manual redaction completely, ensuring GDPR and IT Act compliance with local document anonymization.",
+    tags: ["Python", "NLP", "PyMuPDF", "Data Privacy", "GDPR", "Regex"],
+    status: "Public",
   },
   {
-    id: "nlp-engine",
-    title: "NLP Engine",
-    description: "Scalable NLP service for document understanding, entity extraction, and semantic search.",
-    problem: "Processing large document collections for insights required expensive commercial solutions.",
-    solution: "Custom NLP pipeline with fine-tuned transformers and vector database integration.",
-    architecture: "FastAPI service with BERT models, Elasticsearch, and Pinecone for vector search.",
-    impact: "Processes 100K+ documents daily with 94% entity extraction accuracy.",
-    tags: ["Transformers", "FastAPI", "Elasticsearch", "Pinecone", "Python"],
-    status: "Production",
-    github: "https://github.com",
+    id: "veda",
+    title: "VEDA",
+    description: "An intelligent Next.js platform designed for robust and highly secure cloud data aggregation and user metrics visualization.",
+    tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+    status: "Public",
   },
   {
-    id: "automl-platform",
-    title: "AutoML Platform",
-    description: "Automated machine learning platform for non-ML engineers to build and deploy models.",
-    problem: "Data scientists were bottlenecked with routine model building tasks.",
-    solution: "No-code platform with automated feature engineering, model selection, and hyperparameter tuning.",
-    architecture: "React frontend with Python backend, Ray for distributed training, and MLflow for tracking.",
-    impact: "Enabled 50+ non-ML engineers to build production models, saving 200+ hours monthly.",
-    tags: ["Ray", "Optuna", "React", "FastAPI", "Docker"],
-    status: "Production",
-    github: "https://github.com",
-    demo: "https://demo.example.com",
+    id: "devverse",
+    title: "DevVerse",
+    description: "A collaborative online community space built for developers to review repositories, share technical tips, and discuss frameworks.",
+    tags: ["Next.js", "TypeScript", "React", "Node.js"],
+    status: "Public",
+  },
+  {
+    id: "citinexus",
+    title: "CitiNexus",
+    description: "A smart city data portal aggregating infrastructure usage, electricity loads, and public transportation updates.",
+    tags: ["Next.js", "TypeScript", "React", "Recharts"],
+    status: "Public",
+  },
+  {
+    id: "ayush",
+    title: "Ayush",
+    description: "A public wellness portal mapping traditional Ayurvedic resources, herbal indices, and regime guides to modern user interfaces.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "MIT License"],
+    status: "Public",
+  },
+  {
+    id: "salary-insights",
+    title: "Salary Insights",
+    description: "An interactive analytics dashboard tracking regional tech compensation statistics, roles, and experience bands.",
+    tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
+    status: "Public",
+  },
+  {
+    id: "journey",
+    title: "Journey",
+    description: "A beautifully animated timeline assistant enabling individuals to chart milestones, qualifications, and project timelines.",
+    tags: ["Next.js", "TypeScript", "Framer Motion"],
+    status: "Public",
+  },
+  {
+    id: "suvitta",
+    title: "Suvitta",
+    description: "A clean, responsive personal wealth planner with local storage backups and compound interest graphing widgets.",
+    tags: ["React", "TypeScript", "ChartJS", "LocalStorage"],
+    status: "Public",
+  },
+  {
+    id: "govind",
+    title: "Govind",
+    description: "A localized inventory and resource management system for optimizing regional municipal asset allocation logs.",
+    tags: ["React", "JavaScript", "Node.js"],
+    status: "Public",
+  },
+  {
+    id: "sanjeevani",
+    title: "Sanjeevani",
+    description: "A critical care bed management and medical dispatch portal designed for emergency hospital networks.",
+    tags: ["Next.js", "TypeScript", "Firebase", "Geolocator"],
+    status: "Public",
+  },
+  {
+    id: "project-mysore",
+    title: "Project Mysore",
+    description: "An interactive map dashboard cataloging historical structures, cultural sites, and tourist paths in Mysore.",
+    tags: ["JavaScript", "HTML5", "CSS3", "Leaflet Maps"],
+    status: "Public",
+  },
+  {
+    id: "dev-voting",
+    title: "DEV - Decentralized E-Voting",
+    description: "A private, tamper-proof e-voting platform leveraging decentralized ledger tech to verify and register voter choices securely.",
+    tags: ["Solidity", "Ethereum", "Web3.js", "React", "Cryptography"],
+    status: "Private",
   },
 ]
 
@@ -137,24 +198,34 @@ export default function OperaPage() {
                     {project.description}
                   </p>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <h4 className="text-sm font-semibold text-primary mb-2">Problem</h4>
-                      <p className="text-sm text-muted-foreground">{project.problem}</p>
+                  {(project.problem || project.solution || project.architecture || project.impact) && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      {project.problem && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-primary mb-2">Problem</h4>
+                          <p className="text-sm text-muted-foreground">{project.problem}</p>
+                        </div>
+                      )}
+                      {project.solution && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-primary mb-2">Solution</h4>
+                          <p className="text-sm text-muted-foreground">{project.solution}</p>
+                        </div>
+                      )}
+                      {project.architecture && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-primary mb-2">Architecture</h4>
+                          <p className="text-sm text-muted-foreground">{project.architecture}</p>
+                        </div>
+                      )}
+                      {project.impact && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-primary mb-2">Impact</h4>
+                          <p className="text-sm text-muted-foreground">{project.impact}</p>
+                        </div>
+                      )}
                     </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-primary mb-2">Solution</h4>
-                      <p className="text-sm text-muted-foreground">{project.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-primary mb-2">Architecture</h4>
-                      <p className="text-sm text-muted-foreground">{project.architecture}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-primary mb-2">Impact</h4>
-                      <p className="text-sm text-muted-foreground">{project.impact}</p>
-                    </div>
-                  </div>
+                  )}
                   
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (

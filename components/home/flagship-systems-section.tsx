@@ -3,22 +3,22 @@ import Link from "next/link"
 export function FlagshipSystemsSection() {
   const projects = [
     {
-      title: "NeuralSync",
-      description: "Real-time neural network inference engine with sub-10ms latency for production workloads.",
-      tags: ["PyTorch", "CUDA", "C++", "gRPC"],
-      status: "Production",
+      title: "Unified E-Waste Management Platform (UEMP)",
+      description: "An intelligent digital system to streamline device lifecycle tracking and recycling, promoting a circular economy.",
+      tags: ["React", "Firebase", "Gemini AI", "Node.js"],
+      status: "Award-winning",
     },
     {
-      title: "DataForge",
-      description: "Distributed data pipeline framework processing 1M+ events/second with fault tolerance.",
-      tags: ["Apache Kafka", "Spark", "Python", "K8s"],
-      status: "Open Source",
+      title: "Govind",
+      description: "A localized inventory and resource management system for optimizing regional municipal asset allocation logs.",
+      tags: ["React", "JavaScript", "Node.js"],
+      status: "Public",
     },
     {
-      title: "VisionCore",
-      description: "Computer vision platform for autonomous systems with multi-modal sensor fusion.",
-      tags: ["TensorFlow", "OpenCV", "ROS2", "Edge AI"],
-      status: "In Development",
+      title: "PII Detection & Redaction Tool",
+      description: "A secure, desktop-based Python application designed to automatically detect and redact sensitive Personally Identifiable Information (PII) from PDFs.",
+      tags: ["Python", "NLP", "PyMuPDF", "Data Privacy"],
+      status: "Public",
     },
   ]
 
