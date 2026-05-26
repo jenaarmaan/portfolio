@@ -3,14 +3,9 @@ import Link from "next/link"
 export function ResearchPreviewSection() {
   const research = [
     {
-      title: "Efficient Transformer Architectures for Edge Deployment",
-      venue: "NeurIPS 2024",
-      description: "Novel compression techniques achieving 4x speedup with minimal accuracy loss on resource-constrained devices.",
-    },
-    {
-      title: "Self-Supervised Learning for Multi-Modal Sensor Fusion",
-      venue: "ICML 2024",
-      description: "A contrastive learning approach for aligning representations across different sensor modalities.",
+      title: "AI-Powered Unified Platform for Sustainable E-Waste Management",
+      venue: "Patent Application (Indian Patent Act 1970)",
+      description: "A secure digital ecosystem (UEMP) enabling end-to-end QR-code-based optical tracking and closed-loop lifecycle traceability of electronic waste.",
     },
   ]
 

@@ -6,30 +6,23 @@ export const metadata: Metadata = {
   description: "My research work, ideas, and explorations in AI/ML and systems engineering.",
 }
 
-const publications = [
+interface Publication {
+  title: string
+  venue: string
+  authors: string
+  abstract: string
+  link: string
+  pdf?: string
+}
+
+const publications: Publication[] = [
   {
-    title: "Efficient Transformer Architectures for Edge Deployment",
-    venue: "NeurIPS 2024",
-    authors: "A. Smith, J. Doe, M. Johnson",
-    abstract: "We present novel compression techniques for transformer models achieving 4x inference speedup with less than 2% accuracy degradation on resource-constrained edge devices. Our approach combines structured pruning with knowledge distillation in a unified framework.",
-    link: "https://arxiv.org",
-    pdf: "https://arxiv.org",
-  },
-  {
-    title: "Self-Supervised Learning for Multi-Modal Sensor Fusion",
-    venue: "ICML 2024",
-    authors: "J. Doe, A. Smith, K. Williams",
-    abstract: "A contrastive learning approach for aligning representations across different sensor modalities without labeled data. We demonstrate state-of-the-art performance on autonomous driving benchmarks.",
-    link: "https://arxiv.org",
-    pdf: "https://arxiv.org",
-  },
-  {
-    title: "Scaling Laws for Neural Network Quantization",
-    venue: "ICLR 2023",
-    authors: "A. Smith, R. Brown",
-    abstract: "We investigate how quantization affects model performance across different scales and architectures. Our findings provide practical guidelines for deploying quantized models in production.",
-    link: "https://arxiv.org",
-    pdf: "https://arxiv.org",
+    title: "AI-Powered Unified Platform for Sustainable E-Waste Management",
+    venue: "Patent Application (Indian Patent Act 1970)",
+    authors: "Harihar Jeevan, Arya H. R., Armaan Samir Jena, Parinith R., Prof. Rumana Anjum, Dr. Madhu B. K.",
+    abstract: "A unified digital system (Unified E-Waste Management Platform - UEMP) for full lifecycle traceability and management of electronic products using a secure QR-code-based optical tagging and authentication framework. The platform integrates React, Next.js, and ElectronJS frontends with secure backend services (Firebase, Firestore, Node.js APIs) and a Gemini AI module for intelligent analytics, chatbot capabilities, and automated regulatory compliance reporting across manufacturers, consumers, recyclers, and government regulators.",
+    link: "https://drive.google.com/file/d/1p2Odjm3JEyGAP4rp8W_n6McJhJKBPLAD/view?usp=sharing",
+    // pdf: "https://drive.google.com/file/d/1p2Odjm3JEyGAP4rp8W_n6McJhJKBPLAD/view?usp=sharing",
   },
 ]
 
@@ -53,9 +46,9 @@ const researchDomains = [
 
 const ideas = [
   {
-    title: "Continuous Learning in Production",
-    description: "Exploring techniques for models to safely adapt to distribution shifts in production without catastrophic forgetting.",
-    status: "Exploring",
+    title: "Quantum Computing & AI/ML",
+    description: "Current research on applying quantum algorithms to accelerate machine learning, optimize complex neural networks, and process quantum data.",
+    status: "Current",
   },
   {
     title: "Energy-Efficient Training",
@@ -109,12 +102,14 @@ export default function CogitoPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                     </svg>
                   </Link>
-                  <Link href={pub.pdf} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                    PDF
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                    </svg>
-                  </Link>
+                  {pub.pdf && (
+                    <Link href={pub.pdf} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
+                      PDF
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </article>
             ))}
