@@ -19,42 +19,6 @@ const initiatives = [
     logo: "G",
   },
   {
-    role: "Internal Hackathon Organizer",
-    organization: "SIH 2024",
-    period: "September 2024",
-    description: "Coordinated and executed the institute-level Internal Hackathon for Smart India Hackathon 2024. Simultaneously participated as a lead innovator, pitching solutions for real-world impact.",
-    highlights: [
-      "Orchestrated event logistics and faculty coordination",
-      "Pitched a high-potential solution for national-level challenges",
-      "Fostered a culture of innovation and collaboration on campus",
-    ],
-    logo: "SIH",
-  },
-  {
-    role: "GDGoC Core Member",
-    organization: "Google Developers Group",
-    period: "Oct 2024 - Aug 2025",
-    description: "Actively involved in the Google Developer Groups ecosystem, contributing to the local tech community through knowledge sharing and event coordination.",
-    highlights: [
-      "Contributed to the organization of regional DevFests",
-      "Collaborated with industry experts for technical seminars",
-      "Supported local developers in mastering modern tech stacks",
-    ],
-    logo: "GDG",
-  },
-  {
-    role: "Lead Innovator",
-    organization: "Girls Geek Hack (IEEE)",
-    period: "December 2023",
-    description: "Presented a Blockchain-based Digital Health Record Management System integrated with Aadhaar authentication, focused on secure and decentralized health records.",
-    highlights: [
-      "Integrated Aadhaar (UIDAI) for unique patient identification",
-      "Designed decentralized retrieval systems for emergency access",
-      "Collaborated with a multi-disciplinary team for life-saving tech",
-    ],
-    logo: "IEEE",
-  },
-  {
     role: "GSSoC Campus Ambassador",
     organization: "GirlScript Summer of Code",
     period: "Jul 2025 - Sep 2025",
