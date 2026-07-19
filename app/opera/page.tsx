@@ -14,6 +14,7 @@ interface Project {
   solution?: string
   architecture?: string
   impact?: string
+  features?: string[]
   tags: string[]
   status: string
   github?: string
@@ -24,122 +25,276 @@ const projects: Project[] = [
   {
     id: "uemp",
     title: "Unified E-Waste Management Platform (UEMP)",
-    description: "An intelligent, robust digital system to streamline the lifecycle management of electronic products—from manufacturing to recycling—supporting a sustainable circular economy.",
-    problem: "Lack of centralized, secure tracking mechanisms for electronics, creating massive environmental challenges and cross-stakeholder audit gaps.",
-    solution: "A unified portal connecting manufacturers, consumers, recyclers, and regulators using secure optical tag registration.",
-    architecture: "Next.js, Node.js API, Firebase Authentication, Firestore Database, and Google Gemini AI module integration.",
-    impact: "🏆 Selected as one of the Top 105 Projects Pan India in the Google GDG Hack2Skill Hackathon 2025. Provides secure device tracking and real-time impact reports.",
-    tags: ["React", "Next.js", "Firebase", "Node.js", "Gemini AI", "ElectronJS"],
+    description: "Intelligent Circular Economy Platform for Sustainable Electronic Waste Management. An AI-powered digital ecosystem designed to track electronic products throughout their complete lifecycle—from manufacturing and ownership to recycling and disposal. The platform enables transparent collaboration between manufacturers, consumers, recyclers, and government agencies while promoting sustainable e-waste management practices.",
+    problem: "Electronic waste management remains fragmented due to the absence of centralized tracking systems. Manufacturers cannot monitor products after sale, consumers lack convenient recycling mechanisms, and regulators struggle to enforce compliance because of missing lifecycle visibility.",
+    solution: "Developed a unified platform that assigns every electronic device a unique digital identity using QR-based registration. AI-powered classification, lifecycle tracking, and real-time analytics enable secure monitoring of products while simplifying responsible disposal and recycling.",
+    architecture: "Frontend: Next.js, React, Tailwind CSS | Backend: Node.js, Express.js | Database: Firebase Firestore | Authentication: Firebase Authentication | AI: Google Gemini AI, TensorFlow, EfficientNet-B0 | Cloud: Firebase & Google Cloud Platform",
+    impact: "Selected among Top 105 Teams Pan India in the Google GDG Build with AI Hackathon 2025. Promotes circular economy principles through transparent device tracking. Reduces illegal disposal and improves recycling compliance.",
+    features: [
+      "QR-based product registration",
+      "Device lifecycle tracking",
+      "AI-powered e-waste classification",
+      "Manufacturer dashboard",
+      "Recycler management portal",
+      "Consumer portal",
+      "Government administration system",
+      "Recycling certification",
+      "Environmental impact analytics",
+      "Secure authentication"
+    ],
+    tags: ["Next.js", "React", "Node.js", "Firebase", "Gemini AI", "TensorFlow", "Firestore"],
     status: "Award-winning",
   },
   {
     id: "autoforge",
     title: "AutoForge",
-    description: "Automated, secure CI/CD pipeline leveraging industry-standard cloud workflows to streamline code deployment and infrastructure resets.",
-    problem: "Manual code delivery, regression testing, and EC2 application restarts were slow, prone to credentials exposure, and lacked process orchestration.",
-    solution: "Fully automated pipeline executing test suites, build actions, image caching, and instance restarts with secure secret variable storage.",
-    architecture: "GitHub Actions workflows coupled with AWS EC2 container endpoints and cloud instances.",
-    impact: "Bypasses manual maintenance and credentials exposure completely, achieving a highly secure, zero-overhead deployment loop.",
-    tags: ["AWS EC2", "GitHub Actions", "Docker", "CI/CD", "TypeScript", "Shell"],
+    description: "Automated Enterprise CI/CD Infrastructure. A secure DevOps automation platform that streamlines software deployment using GitHub Actions, Docker, and AWS infrastructure. AutoForge automates testing, containerization, deployment, and server management to eliminate manual intervention.",
+    problem: "Traditional deployment workflows require manual testing, deployment, credential management, and server restarts, leading to inconsistent releases and operational overhead.",
+    solution: "Built a fully automated CI/CD pipeline that executes unit tests, builds Docker images, securely stores secrets, deploys applications to AWS EC2, and restarts services automatically after successful builds.",
+    architecture: "GitHub → GitHub Actions → Docker Build → AWS EC2 → Automated Deployment",
+    impact: "Eliminated manual deployments. Improved deployment consistency. Reduced credential exposure. Faster release cycles.",
+    features: [
+      "GitHub Actions automation",
+      "Docker image generation",
+      "Automated testing",
+      "AWS EC2 deployment",
+      "Secure secret management",
+      "Automatic rollback support",
+      "Container orchestration",
+      "Continuous Integration",
+      "Continuous Deployment"
+    ],
+    tags: ["GitHub Actions", "AWS EC2", "Docker", "TypeScript", "Shell", "CI/CD"],
     status: "Public",
   },
   {
     id: "arogya",
     title: "Arogya AI",
-    description: "An intelligent medical diagnosis system leveraging deep learning to automate disease detection and medical imaging diagnostics.",
-    problem: "Lack of immediate, reliable diagnostic support in resource-constrained communities with few medical specialists.",
-    solution: "Computer-aided diagnostic system utilizing high-precision convolutional neural networks (CNNs) for multi-class image classification.",
-    architecture: "Jupyter Notebook running PyTorch and fine-tuned ResNet-50 / EfficientNet neural network backbones.",
-    impact: "Highly optimized deep learning model providing automated, high-precision image detection for rapid healthcare decisions.",
-    tags: ["Deep Learning", "CNN", "ResNet 50", "EfficientNet", "PyTorch", "Jupyter"],
+    description: "AI-Powered Medical Imaging Diagnosis System. A deep learning healthcare platform that assists medical professionals by automatically detecting diseases from medical images using convolutional neural networks and transfer learning.",
+    problem: "Many rural healthcare facilities lack access to experienced radiologists, resulting in delayed diagnosis and treatment.",
+    solution: "Implemented a CNN-based diagnostic system trained on chest X-ray datasets using transfer learning. The model predicts disease probability with confidence scores, assisting clinicians in rapid diagnosis.",
+    architecture: "Data Collection → Image Preprocessing → CNN Model → Prediction API → User Dashboard | Models Used: ResNet-50, EfficientNet, CNN",
+    impact: "Provides rapid diagnostic assistance. Supports healthcare in resource-limited environments. Enables AI-assisted medical imaging.",
+    features: [
+      "Chest X-ray analysis",
+      "Tuberculosis detection",
+      "Transfer learning",
+      "Medical image preprocessing",
+      "Confidence scoring",
+      "TensorFlow Lite deployment",
+      "Prediction dashboard"
+    ],
+    tags: ["Python", "TensorFlow", "PyTorch", "ResNet50", "EfficientNet", "OpenCV", "Flask"],
     status: "Public",
   },
   {
     id: "pii-redaction",
     title: "PII Detection & Redaction Tool",
-    description: "A secure, desktop-based Python application designed to automatically detect and redact sensitive Personally Identifiable Information (PII) from PDFs.",
-    problem: "Manual sanitization of research files and legal documents is highly slow and poses serious data privacy leaks.",
-    solution: "High-precision regular expression analyzers and SpaCy NLP models combined to target Aadhaar, PAN, emails, and phone numbers.",
-    architecture: "Python desktop framework running PyMuPDF (Fitz) and local regular expression filters for absolute data privacy.",
-    impact: "🛡️ Bypasses manual redaction completely, ensuring GDPR and IT Act compliance with local document anonymization.",
-    tags: ["Python", "NLP", "PyMuPDF", "Data Privacy", "GDPR", "Regex"],
+    description: "Privacy-Preserving PDF Redaction System. A desktop application that automatically detects and removes sensitive personal information from PDF documents while ensuring complete offline privacy.",
+    problem: "Organizations manually redact sensitive information from documents, making the process time-consuming and susceptible to human error.",
+    solution: "Developed an NLP-powered desktop application combining rule-based detection and Named Entity Recognition (NER) to automatically identify and redact personal information without uploading documents to external servers.",
+    architecture: "Python GUI → PDF Parser → Presidio Analyzer → SpaCy NLP → Redacted PDF Generator",
+    impact: "Prevents accidental data leakage. Supports privacy regulations. Performs all processing locally.",
+    features: [
+      "Aadhaar detection",
+      "PAN detection",
+      "Email detection",
+      "Phone number detection",
+      "Name recognition",
+      "Address detection",
+      "Automatic PDF redaction",
+      "Batch document processing",
+      "Offline execution"
+    ],
+    tags: ["Python", "SpaCy", "Presidio", "PyMuPDF", "Regex", "NLP"],
     status: "Public",
   },
   {
     id: "veda",
     title: "VEDA",
-    description: "An intelligent Next.js platform designed for robust and highly secure cloud data aggregation and user metrics visualization.",
-    tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+    description: "Enterprise Data Intelligence & Analytics Platform. VEDA is a cloud-ready analytics platform that aggregates data from multiple sources into unified dashboards for business intelligence and operational monitoring.",
+    problem: "Organizations often rely on fragmented systems, making it difficult to visualize key performance metrics and derive actionable insights.",
+    solution: "Built a scalable web application capable of aggregating data from multiple sources, presenting interactive visualizations, and providing secure access to business metrics.",
+    architecture: "Next.js → API Layer → Data Aggregation → Dashboard Components",
+    features: [
+      "Interactive dashboards",
+      "Data aggregation",
+      "KPI visualization",
+      "Secure authentication",
+      "Cloud-ready architecture",
+      "Responsive UI"
+    ],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     status: "Public",
   },
   {
     id: "devverse",
     title: "DevVerse",
-    description: "A collaborative online community space built for developers to review repositories, share technical tips, and discuss frameworks.",
-    tags: ["Next.js", "TypeScript", "React", "Node.js"],
+    description: "Collaborative Developer Community Platform. A social platform built specifically for developers to collaborate, share technical content, review repositories, and participate in knowledge-driven discussions.",
+    problem: "Developers frequently rely on multiple disconnected platforms for networking, blogging, repository sharing, and technical discussions.",
+    solution: "Created a unified community platform combining developer profiles, repository showcases, blogs, discussion forums, and technical resource sharing.",
+    features: [
+      "Developer profiles",
+      "Project showcase",
+      "Repository reviews",
+      "Blog publishing",
+      "Technical discussions",
+      "Community interactions",
+      "Search & filtering"
+    ],
+    tags: ["Next.js", "React", "Node.js", "TypeScript"],
     status: "Public",
   },
   {
     id: "citinexus",
     title: "CitiNexus",
-    description: "A smart city data portal aggregating infrastructure usage, electricity loads, and public transportation updates.",
-    tags: ["Next.js", "TypeScript", "React", "Recharts"],
+    description: "Smart City Intelligence Dashboard. An urban analytics platform designed to visualize infrastructure data, monitor utilities, and assist municipalities with data-driven decision-making.",
+    problem: "Municipal authorities struggle to monitor multiple public services from disconnected information systems.",
+    solution: "Developed a centralized dashboard providing real-time visualization of transportation, electricity, water usage, and public infrastructure.",
+    features: [
+      "Infrastructure monitoring",
+      "Transportation analytics",
+      "Utility dashboards",
+      "Interactive charts",
+      "Data visualization",
+      "Responsive interface"
+    ],
+    tags: ["Next.js", "React", "Recharts", "TypeScript"],
     status: "Public",
   },
   {
     id: "ayush",
     title: "Ayush",
-    description: "A public wellness portal mapping traditional Ayurvedic resources, herbal indices, and regime guides to modern user interfaces.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "MIT License"],
+    description: "Digital Ayurveda Knowledge Platform. A modern wellness platform that digitizes traditional Ayurvedic knowledge by providing searchable herbal remedies, wellness practices, and personalized healthcare guidance.",
+    problem: "Traditional Ayurvedic knowledge remains scattered across books and regional sources, limiting accessibility for modern users.",
+    solution: "Created an interactive portal presenting Ayurvedic herbs, wellness practices, and health recommendations through a user-friendly interface.",
+    features: [
+      "Herbal database",
+      "Wellness guides",
+      "Search functionality",
+      "Educational resources",
+      "Mobile-friendly UI"
+    ],
+    tags: ["React", "TypeScript", "Tailwind CSS"],
     status: "Public",
   },
   {
     id: "salary-insights",
     title: "Salary Insights",
-    description: "An interactive analytics dashboard tracking regional tech compensation statistics, roles, and experience bands.",
+    description: "Interactive Compensation Analytics Platform. A visualization platform that helps users analyze salary trends across industries, locations, experience levels, and job roles.",
+    problem: "Job seekers often lack reliable compensation insights when evaluating career opportunities.",
+    solution: "Built an interactive dashboard that presents salary distributions, regional comparisons, and experience-based compensation trends.",
+    features: [
+      "Salary analytics",
+      "Regional comparisons",
+      "Interactive charts",
+      "Market trend visualization",
+      "Responsive dashboards"
+    ],
     tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
     status: "Public",
   },
   {
     id: "journey",
     title: "Journey",
-    description: "A beautifully animated timeline assistant enabling individuals to chart milestones, qualifications, and project timelines.",
+    description: "Interactive Career Timeline Platform. A portfolio and timeline management application enabling users to visualize achievements, certifications, internships, education, and career progression.",
+    problem: "Students and professionals struggle to organize their achievements into a coherent career timeline.",
+    solution: "Developed an animated timeline application that visually presents milestones and accomplishments while simplifying portfolio management.",
+    features: [
+      "Timeline visualization",
+      "Career milestones",
+      "Achievement tracking",
+      "Interactive animations",
+      "Search & organization"
+    ],
     tags: ["Next.js", "TypeScript", "Framer Motion"],
     status: "Public",
   },
   {
     id: "suvitta",
     title: "Suvitta",
-    description: "A clean, responsive personal wealth planner with local storage backups and compound interest graphing widgets.",
-    tags: ["React", "TypeScript", "ChartJS", "LocalStorage"],
+    description: "Personal Finance & Investment Planner. A responsive financial planning application that assists users in budgeting, investment planning, and long-term wealth forecasting.",
+    problem: "Most financial planning tools are either overly complex or inaccessible to beginners.",
+    solution: "Built an intuitive finance dashboard that calculates savings growth, compound interest, and financial projections while storing data securely in the browser.",
+    features: [
+      "Budget planner",
+      "Investment tracker",
+      "Compound interest calculator",
+      "Interactive charts",
+      "Local storage backup"
+    ],
+    tags: ["React", "TypeScript", "Chart.js", "LocalStorage"],
     status: "Public",
   },
   {
     id: "govind",
     title: "Govind",
-    description: "A localized inventory and resource management system for optimizing regional municipal asset allocation logs.",
+    description: "Municipal Inventory Management System. A resource management platform designed to streamline inventory tracking and municipal asset allocation across departments.",
+    problem: "Government inventory systems often rely on manual record-keeping, resulting in inefficiencies and poor resource visibility.",
+    solution: "Developed a centralized inventory management platform supporting asset tracking, allocation records, and resource availability monitoring.",
+    features: [
+      "Asset management",
+      "Inventory tracking",
+      "Resource allocation",
+      "Department dashboards",
+      "Search & reporting"
+    ],
     tags: ["React", "JavaScript", "Node.js"],
     status: "Public",
   },
   {
     id: "sanjeevani",
     title: "Sanjeevani",
-    description: "A critical care bed management and medical dispatch portal designed for emergency hospital networks.",
-    tags: ["Next.js", "TypeScript", "Firebase", "Geolocator"],
+    description: "Emergency Healthcare Resource Coordination Platform. A healthcare coordination platform enabling hospitals to share emergency resource availability in real time.",
+    problem: "Patients and emergency responders often face delays due to the lack of real-time information about hospital capacity.",
+    solution: "Built a centralized platform displaying ICU bed availability, ambulance locations, oxygen supplies, and emergency contacts across healthcare facilities.",
+    features: [
+      "ICU bed availability",
+      "Ambulance tracking",
+      "Hospital dashboards",
+      "Real-time updates",
+      "Geolocation support"
+    ],
+    tags: ["Next.js", "Firebase", "TypeScript", "Geolocation API"],
     status: "Public",
   },
   {
     id: "project-mysore",
     title: "Project Mysore",
-    description: "An interactive map dashboard cataloging historical structures, cultural sites, and tourist paths in Mysore.",
+    description: "Interactive Heritage & Tourism Information System. A GIS-powered web application showcasing Mysore's cultural heritage, historical monuments, tourist attractions, and navigation routes through an interactive map interface.",
+    problem: "Tourists often struggle to discover historical sites and navigate cultural landmarks efficiently.",
+    solution: "Developed an interactive mapping platform integrating heritage information, location data, and travel routes into a single user-friendly experience.",
+    features: [
+      "Interactive maps",
+      "Heritage information",
+      "Tourist route planning",
+      "Landmark descriptions",
+      "Geographic visualization"
+    ],
     tags: ["JavaScript", "HTML5", "CSS3", "Leaflet Maps"],
     status: "Public",
   },
   {
     id: "dev-voting",
-    title: "DEV - Decentralized E-Voting",
-    description: "A private, tamper-proof e-voting platform leveraging decentralized ledger tech to verify and register voter choices securely.",
-    tags: ["Solidity", "Ethereum", "Web3.js", "React", "Cryptography"],
+    title: "DEV – Decentralized Electronic Voting System",
+    description: "Blockchain-Based Secure Electronic Voting Platform. A decentralized voting platform leveraging Ethereum smart contracts to provide secure, transparent, and tamper-proof digital elections while ensuring voter privacy and election integrity.",
+    problem: "Conventional electronic voting systems depend on centralized infrastructure, making them vulnerable to manipulation, single points of failure, and reduced public trust.",
+    solution: "Implemented a blockchain-based election platform where votes are securely recorded as immutable transactions. Smart contracts automate election management, prevent duplicate voting, and enable transparent public verification without revealing voter identities.",
+    architecture: "React Frontend → Web3.js → MetaMask → Ethereum Smart Contracts → Blockchain Ledger",
+    impact: "Ensures transparency and immutability of election records. Eliminates single points of failure through decentralized infrastructure. Demonstrates practical application of blockchain technology in secure digital governance.",
+    features: [
+      "Smart contract-based elections",
+      "Blockchain vote storage",
+      "Immutable audit logs",
+      "Secure voter authentication",
+      "Candidate management",
+      "Election scheduling",
+      "Automated vote counting",
+      "Public result verification",
+      "Wallet integration",
+      "Cryptographic security"
+    ],
+    tags: ["Solidity", "Ethereum", "Web3.js", "React", "Hardhat", "Ganache", "MetaMask", "Cryptography"],
     status: "Private",
   },
 ]
@@ -198,7 +353,7 @@ export default function OperaPage() {
                     {project.description}
                   </p>
                   
-                  {(project.problem || project.solution || project.architecture || project.impact) && (
+                  {(project.problem || project.solution || project.architecture || project.impact || project.features) && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       {project.problem && (
                         <div>
@@ -222,6 +377,21 @@ export default function OperaPage() {
                         <div>
                           <h4 className="text-sm font-semibold text-primary mb-2">Impact</h4>
                           <p className="text-sm text-muted-foreground">{project.impact}</p>
+                        </div>
+                      )}
+                      {project.features && (
+                        <div className="col-span-1 md:col-span-2">
+                          <h4 className="text-sm font-semibold text-primary mb-2">Key Features</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {project.features.map((feature, i) => (
+                              <span 
+                                key={i} 
+                                className="text-xs px-2.5 py-1 rounded bg-primary/5 text-muted-foreground border border-border/50 font-medium"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>
