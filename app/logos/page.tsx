@@ -19,6 +19,18 @@ const initiatives = [
     logo: "G",
   },
   {
+    role: "GDGoC Core Member",
+    organization: "Google Developers Group",
+    period: "Oct 2024 - Aug 2025",
+    description: "Actively involved in the Google Developer Groups ecosystem, contributing to the local tech community through knowledge sharing and event coordination.",
+    highlights: [
+      "Contributed to the organization of regional DevFests",
+      "Collaborated with industry experts for technical seminars",
+      "Supported local developers in mastering modern tech stacks",
+    ],
+    logo: "GDG",
+  },
+  {
     role: "GSSoC Campus Ambassador",
     organization: "GirlScript Summer of Code",
     period: "Jul 2025 - Sep 2025",
