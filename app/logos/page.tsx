@@ -7,6 +7,18 @@ export const metadata: Metadata = {
 
 const initiatives = [
   {
+    role: "Undergraduate Research Fellow",
+    organization: "GRAAM",
+    period: "Apr 2026 - Present · 4 mos",
+    description: "Engaging in empirical research and policy analysis to support community development and evidence-based advocacy at the Grassroots Research and Advocacy Movement.",
+    highlights: [
+      "Analyzing socio-economic datasets to evaluate grassroots community programs",
+      "Contributing to research design, policy briefs, and advocacy frameworks",
+      "Collaborating on field evaluation studies for public policy initiatives",
+    ],
+    logo: "GR",
+  },
+  {
     role: "Google Student Ambassador",
     organization: "Google",
     period: "Aug 2025 - Dec 2025",
@@ -33,7 +45,7 @@ const initiatives = [
   {
     role: "GSSoC Campus Ambassador",
     organization: "GirlScript Summer of Code",
-    period: "Jul 2025 - Sep 2025",
+    period: "Jul 2025 - Aug 2025",
     description: "Advocating for open-source development and guiding aspiring developers through the GirlScript Summer of Code program.",
     highlights: [
       "Guided students in finding and contributing to open-source projects",
@@ -46,39 +58,25 @@ const initiatives = [
 
 const events = [
   {
-    name: "Infosys Springboard Summit 2025",
-    date: "2025",
-    type: "Summit",
-    location: "Infosys Campus",
-    description: "Explored the future of digital transformation and lifelong learning. Engaged in high-level discussions on cloud strategy and career growth with leaders from Infosys and AWS.",
+    name: "Vertex AI Workshop",
+    date: "November 2025",
+    type: "Workshop",
+    location: "BGSIT, Mandya",
+    description: "Conducted an interactive workshop on Vertex AI as Google Student Ambassadors. Guided students through hands-on learning, showing them how AI connects ideas to real-world innovation.",
   },
   {
-    name: "Vigyanlabs Workshop",
-    date: "August 2025",
-    type: "Technical Workshop",
-    location: "Vigyanlabs, Mysuru",
-    description: "Deep dive into sovereign cloud infrastructure, agentic AI, and data security. Observed live demos of AI-powered sustainability tools and private cloud deployments.",
+    name: "Game-A-Thon Workshop",
+    date: "November 2025",
+    type: "Workshop",
+    location: "P.E.S. College of Engineering, Mandya",
+    description: "Led a hands-on game-building session as Google Student Ambassadors. Guided students through game development, combining AI, coding, and game design to build playable games within an hour.",
   },
   {
-    name: "Generative AI Webinar",
-    date: "2024",
-    type: "Webinar",
-    location: "100x Engineers",
-    description: "Explored the revolution of image and video creation using prompts and advanced AI tools. Deep dive into FLUX DEV LoRA, Hugging Face, Runway.ml, and Replicate to enhance creative productivity.",
-  },
-  {
-    name: "GDG Build with AI Bootcamp",
-    date: "March 8, 2024",
-    type: "Bootcamp",
-    location: "SJBIT, Bengaluru",
-    description: "Participated in an immersive dive into building impactful solutions with AI. Engaged in expert mentorship and sessions focused on the Google Solution Challenge.",
-  },
-  {
-    name: "Skanray Industrial Visit",
-    date: "October 2023",
-    type: "Industrial Visit",
-    location: "Skanray Technologies, Mysuru",
-    description: "Gained insights into healthcare and medical equipment manufacturing, observing the product design pipeline and the scale of industrial operations in a leading medical tech firm.",
+    name: "Storytelling through Image Generation",
+    date: "November 2025",
+    type: "Technical Session",
+    location: "MyCEM, Mysuru",
+    description: "Hosted a session on storytelling through image generation as Google Gemini Student Ambassadors, guiding students on leveraging generative AI tools to bring creative narratives to life through digital imagery.",
   },
 ]
 
@@ -93,8 +91,8 @@ export default function LogosPage() {
             Discourse & Community
           </h1>
           <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
-            A record of my technical leadership, community initiatives, and engagement 
-            with the global developer ecosystem. Beyond building systems, I am dedicated 
+            A record of my technical leadership, community initiatives, and engagement
+            with the global developer ecosystem. Beyond building systems, I am dedicated
             to fostering growth and sharing knowledge.
           </p>
         </div>
@@ -107,7 +105,7 @@ export default function LogosPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {initiatives.map((item, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
               >
@@ -140,7 +138,7 @@ export default function LogosPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {events.map((event, index) => (
-              <div 
+              <div
                 key={index}
                 className="flex items-start gap-4 p-6 rounded-xl bg-card/50 border border-border"
               >
