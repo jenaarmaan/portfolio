@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 }
 
 const challenges = [
-  {
+  /*{
     title: "100 Days of AI/ML Learning Challenge",
     duration: "100 days",
     period: "April 2026 - Ongoing",
@@ -30,7 +30,7 @@ const challenges = [
       { day: "Days 45-100", focus: "ML, Deep Learning & LLMs (CNNs, RNNs, Transformers)" },
     ],
     status: "On Going",
-  },
+  },*/
   {
     title: "10-Days Systems Design",
     duration: "10 days",
