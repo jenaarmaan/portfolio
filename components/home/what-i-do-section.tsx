@@ -28,11 +28,11 @@ export function WhatIDoSection() {
       ),
     },
     {
-      title: "Cloud & DevOps",
-      description: "Deploying AI systems to production with modern cloud infrastructure and CI/CD pipelines.",
+      title: "AI Applications & LLMs",
+      description: "Developing intelligent client-facing systems, integrating LLMs, and building custom chatbot architectures.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 21l-.813-5.096L3 15.09l5.096-.813L9 9l.813 5.277L15 15.09l-5.187.814zm12-10.904L21 10l-.813-5.096L15 4.09l5.096-.813L21 1l.813 2.277L27 4.09l-5.187.814zm-12-12L9 5l-.813-2.096L3 2.09l5.096-.813L9 0l.813.277L15 2.09l-5.187.814z" />
         </svg>
       ),
     },
