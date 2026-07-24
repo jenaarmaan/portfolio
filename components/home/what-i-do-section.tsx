@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 export function WhatIDoSection() {
   const areas = [
     {
@@ -38,32 +42,68 @@ export function WhatIDoSection() {
     },
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  }
+
   return (
     <section className="py-24 bg-card/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">What I Do</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-balance">
             Transforming ideas into
             <br />
             <span className="text-muted-foreground">intelligent solutions</span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {areas.map((area, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              variants={cardVariants}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                 {area.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{area.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{area.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{area.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
