@@ -1,9 +1,20 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion"
 
 export function HeroSection() {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const [isHovered, setIsHovered] = useState(false)
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect()
+    mouseX.set(clientX - left)
+    mouseY.set(clientY - top)
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,10 +37,43 @@ export function HeroSection() {
     },
   }
 
+  const particles = [
+    { size: 4, left: "12%", top: "18%", duration: 16, delay: 0 },
+    { size: 6, left: "28%", top: "42%", duration: 24, delay: -4 },
+    { size: 3, left: "38%", top: "82%", duration: 18, delay: -2 },
+    { size: 5, left: "58%", top: "12%", duration: 20, delay: -8 },
+    { size: 7, left: "68%", top: "58%", duration: 28, delay: -6 },
+    { size: 4, left: "82%", top: "32%", duration: 22, delay: -10 },
+    { size: 5, left: "18%", top: "72%", duration: 26, delay: -3 },
+    { size: 3, left: "88%", top: "78%", duration: 15, delay: -5 },
+  ]
+
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section 
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden cursor-default"
+    >
+      {/* Background radial highlight matching cursor */}
+      <motion.div
+        className="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500"
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              oklch(0.75 0.15 180 / 0.07),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+
       {/* Gradient background effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
+      
+      {/* Ambient drifting blobs */}
       <motion.div 
         animate={{
           y: [0, -20, 0],
@@ -56,6 +100,33 @@ export function HeroSection() {
         }}
         className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" 
       />
+      
+      {/* Interactive Floating Particle Nodes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {particles.map((p, idx) => (
+          <motion.div
+            key={idx}
+            className="absolute rounded-full bg-primary/15"
+            style={{
+              width: p.size,
+              height: p.size,
+              left: p.left,
+              top: p.top,
+            }}
+            animate={{
+              y: [0, -40, 0],
+              x: [0, 15, 0],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              delay: p.delay,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
       
       <motion.div 
         variants={containerVariants}
@@ -97,20 +168,29 @@ export function HeroSection() {
           </motion.div>
           
           <motion.div variants={itemVariants} className="pt-12 flex items-center justify-center gap-8 text-muted-foreground">
-            <div className="text-center group cursor-pointer">
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -4 }}
+              className="text-center group cursor-pointer p-4 rounded-xl bg-card/20 border border-transparent hover:border-border hover:bg-card/50 transition-all duration-300"
+            >
               <p className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">15+</p>
               <p className="text-sm">Projects Built</p>
-            </div>
-            <div className="w-px h-12 bg-border" />
-            <div className="text-center group cursor-pointer">
+            </motion.div>
+            <div className="w-px h-12 bg-border align-self-center" />
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -4 }}
+              className="text-center group cursor-pointer p-4 rounded-xl bg-card/20 border border-transparent hover:border-border hover:bg-card/50 transition-all duration-300"
+            >
               <p className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">1+</p>
               <p className="text-sm">Hackathons Won</p>
-            </div>
-            <div className="w-px h-12 bg-border" />
-            <div className="text-center group cursor-pointer">
+            </motion.div>
+            <div className="w-px h-12 bg-border align-self-center" />
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -4 }}
+              className="text-center group cursor-pointer p-4 rounded-xl bg-card/20 border border-transparent hover:border-border hover:bg-card/50 transition-all duration-300"
+            >
               <p className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">1+</p>
               <p className="text-sm">Patent Publication</p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>

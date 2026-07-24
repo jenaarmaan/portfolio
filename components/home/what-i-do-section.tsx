@@ -1,6 +1,64 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion"
+
+function SpotlightCard({ children, className = "", variants }: { children: React.ReactNode; className?: string; variants?: any }) {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect()
+    mouseX.set(clientX - left)
+    mouseY.set(clientY - top)
+  }
+
+  return (
+    <motion.div
+      variants={variants}
+      whileHover={{ y: -6, transition: { duration: 0.2 } }}
+      onMouseMove={handleMouseMove}
+      className={`group relative overflow-hidden rounded-xl bg-card border border-border transition-colors duration-300 hover:border-primary/20 cursor-pointer ${className}`}
+    >
+      {/* Background radial highlight */}
+      <motion.div
+        className="absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              250px circle at ${mouseX}px ${mouseY}px,
+              oklch(0.75 0.15 180 / 0.08),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      {/* Border radial highlight */}
+      <motion.div
+        className="absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          border: "1px solid oklch(0.75 0.15 180 / 0.45)",
+          maskImage: useMotionTemplate`
+            radial-gradient(
+              250px circle at ${mouseX}px ${mouseY}px,
+              black,
+              transparent 80%
+            )
+          `,
+          WebkitMaskImage: useMotionTemplate`
+            radial-gradient(
+              250px circle at ${mouseX}px ${mouseY}px,
+              black,
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div className="relative z-10 p-6 h-full flex flex-col">
+        {children}
+      </div>
+    </motion.div>
+  )
+}
 
 export function WhatIDoSection() {
   const areas = [
@@ -90,18 +148,16 @@ export function WhatIDoSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {areas.map((area, index) => (
-            <motion.div
+            <SpotlightCard
               key={index}
               variants={cardVariants}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors duration-300 cursor-pointer"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
                 {area.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{area.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{area.description}</p>
-            </motion.div>
+            </SpotlightCard>
           ))}
         </motion.div>
       </div>
