@@ -3,22 +3,19 @@ import Link from "next/link"
 export function HackathonHighlightsSection() {
   const hackathons = [
     {
-      name: "AI Hack Global 2024",
-      project: "AutoML Pipeline Generator",
-      result: "1st Place",
-      prize: "$25,000",
+      name: "GDG Build with AI 2025",
+      project: "Unified E-Waste Management Platform",
+      result: "Top 105 Finalist",
     },
     {
-      name: "HackMIT 2023",
-      project: "Real-time Sign Language Translator",
-      result: "Grand Prize",
-      prize: "$15,000",
+      name: "KodiKon 4.0",
+      project: "FinAura — Personal Finance Platform",
+      result: "1st Runner-Up",
     },
     {
-      name: "ETHGlobal SF",
-      project: "Decentralized ML Marketplace",
-      result: "Best AI Track",
-      prize: "$10,000",
+      name: "Microsoft AI Skills Fest",
+      project: "Generative AI & Copilot Integration",
+      result: "Participant",
     },
   ]
 
@@ -53,7 +50,6 @@ export function HackathonHighlightsSection() {
                 <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-primary text-primary-foreground">
                   {hack.result}
                 </span>
-                <span className="text-sm font-mono text-primary">{hack.prize}</span>
               </div>
               <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">{hack.name}</h3>
               <p className="text-muted-foreground text-sm">{hack.project}</p>
