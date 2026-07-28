@@ -26,7 +26,7 @@ export function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="text-lg font-semibold tracking-tight text-foreground hover:text-primary transition-colors">
-            <span className="text-primary">&lt;</span>AJ<span className="text-primary">/&gt;</span>
+            <span className="text-primary">&lt;</span>Jena Armaan<span className="text-primary">&gt;</span>
           </Link>
 
           {/* Desktop Navigation */}

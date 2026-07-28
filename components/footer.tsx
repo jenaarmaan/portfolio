@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <span className="text-lg font-semibold tracking-tight">
-              <span className="text-primary">&lt;</span>AJ<span className="text-primary">/&gt;</span>
+              <span className="text-primary">&lt;</span>Jena Armaan<span className="text-primary">&gt;</span>
             </span>
             <span className="text-muted-foreground text-sm">AI/ML Engineer & Systems Builder</span>
           </div>

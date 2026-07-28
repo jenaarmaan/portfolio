@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'AJ | AI/ML Engineer & Systems Builder',
+  title: 'Jena Armaan | AI/ML Engineer & Systems Builder',
   description: 'Portfolio of an AI/ML Engineer specializing in building intelligent systems, research, and innovative solutions.',
   keywords: ['AI', 'ML', 'Machine Learning', 'Deep Learning', 'Systems Builder', 'Engineer', 'Portfolio'],
 }
